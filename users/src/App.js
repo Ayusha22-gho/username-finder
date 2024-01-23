@@ -66,7 +66,6 @@ function App() {
           element={
             <>
               <Search
-               
                 handleUsernameChange={handleUsernameChange}
                 handleSubmit={handleSubmit}
                 userName={userName}
