@@ -75,8 +75,9 @@ function App() {
             </>
           }
         ></Route>
-        <Route exact path="/details" element={<RepoDetails repoData = {repoData} />}></Route>
-        <Route exact path="/repository" element={<Users search={search} repoData ={repoData} />}></Route>
+        <Route exact path="/details" element={<RepoDetails repoData = {repoData} followData = {followData}/>}></Route>
+        <Route exact path="/" element={<Users search={search} repoData ={repoData} />}></Route>
+        <Route exact path = "/repository" element = {<RepositoryList/>}></Route>
         <Route exact path = "/follows" element = {<Followers followData = {followData}/>}></Route>
       </Routes>
   

@@ -1,7 +1,15 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./followers.css";
 import { Link } from "react-router-dom";
 export default function index({ followData }) {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const navigate = useNavigate();
+
+  
+  
+  
+  console.log("followdata",followData.length)
   return (
     <div className="follow-container">
       {followData.length > 0 ? (
@@ -11,11 +19,15 @@ export default function index({ followData }) {
               <div>
                 <img src={follow.avatar_url} alt="" width={100} height={100} />
               </div>
-              <Link to="/repository">
-                <div className="follow-info">
-                  <p>{follow.login}</p>
-                </div>
-              </Link>
+              <div
+                className="follow-info"
+                onClick={() => {
+                  navigate("/repository",{state : {id : follow.id,repoUrl : follow.repos_url }})
+                  
+                }}
+              >
+                <p>{follow.login}</p>
+              </div>
             </div>
           ))}
         </div>
