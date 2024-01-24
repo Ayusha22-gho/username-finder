@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./followers.css";
 import { Link } from "react-router-dom";
-export default function index({ followData }) {
+export default function index({ followData,getRepData }) {
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  const navigate = useNavigate();
+// eslint-disable-next-line react-hooks/rules-of-hooks
+const [repo,setRepo] = useState("");
 
-  
+  const handleClick = (name) =>{
+   setRepo(name);
+   console.log(name)
+   getRepData(name);
+  }
   
   
   console.log("followdata",followData.length)
@@ -19,15 +24,15 @@ export default function index({ followData }) {
               <div>
                 <img src={follow.avatar_url} alt="" width={100} height={100} />
               </div>
-              <div
+              <Link to = "/repository">
+                <div
                 className="follow-info"
-                onClick={() => {
-                  navigate("/repository")
-
-                }}
+               onClick = {()=>handleClick(follow.login)}
               >
                 <p>{follow.login}</p>
               </div>
+              </Link>
+              
             </div>
           ))}
         </div>

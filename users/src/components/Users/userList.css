@@ -4,7 +4,10 @@
     gap: 20px;
    padding: 10px;
 }
-
+.main-image {
+    flex:0;
+    gap: 10px;
+}
 .user-list{
     flex: 1;
     display: grid;
@@ -14,9 +17,10 @@
 }
 .user-container{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
    align-items: flex-start;
    padding: 10px;
+   gap: 10px;
 }
 .user-container:hover {
     background-color :antiquewhite;
@@ -32,16 +36,21 @@ img {
 .login-name{
     font-size: 13px;
 }
+.user-name{
+    font-size: 20px;
+    font-weight: 500;
+}
 .user-name:hover{
     color: blue;
 }
-.pin-tabs span {
-    width: 50px;
-   margin: 5px;
-   border-radius: 10px;
-   padding: 2px;
-    background-color: #3498db;
+
+.follow-button{
+    width: 145px;
+    height: 40px;
     color: white;
+    background-color: rgb(31, 136, 61);
+    border-radius: 10px;
+}
+.follow-button:hover{
     cursor: pointer;
-    transition: background-color 0.3s;
 }

@@ -1,18 +1,18 @@
 import "./App.css";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Search from "./components/Search/search";
 import Users from "./components/Users/userList";
 import RepoDetails from "./components/RepoDetails/repoDetails";
-import RepositoryList from "./components/repositoryList"
+import RepositoryList from "./components/RepoList/repositoryList"
 import Followers from "./components/Followers/followers"
 function App() {
-  const [users, setUsers] = useState([]);
   const [userName, setUserName] = useState("");
   const [search, setSearch] = useState([]);
   const [repoData, setRepo] = useState([]);
   const [followData, setFollows] = useState([]);
+  const [followRepo, setFollowRepo] = useState([])
 
   // const fetchApiUsers = () => {
   //   axios
@@ -56,6 +56,13 @@ function App() {
     }
   };
 
+  const getRepData = async(name)=>{
+    console.log("from app.js",name)
+    const response = await axios.get(`https://api.github.com/users/${name}/repos`)
+    console.log(response.data)
+    setFollowRepo(response.data);
+
+  }
   
   return (
    
@@ -75,10 +82,10 @@ function App() {
             </>
           }
         ></Route>
-        <Route exact path="/details" element={<RepoDetails repoData = {repoData} followData = {followData}/>}></Route>
+        <Route exact path="/details" element={<RepoDetails repoData = {repoData}/>}></Route>
         <Route exact path="/" element={<Users search={search} repoData ={repoData} />}></Route>
-        <Route exact path = "/repository" element = {<RepositoryList/>}></Route>
-        <Route exact path = "/follows" element = {<Followers followData = {followData}/>}></Route>
+        {followRepo && (<Route exact path = "/repository" element = {<RepositoryList followRepo = {followRepo}/>}></Route>)} 
+        <Route exact path = "/follows" element = {<Followers followData = {followData} getRepData ={getRepData}/>}></Route>
       </Routes>
   
   );

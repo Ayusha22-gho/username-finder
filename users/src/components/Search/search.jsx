@@ -1,5 +1,5 @@
 import React from 'react'
-
+import "./search.css"
 export default function index({handleUsernameChange,userName,handleSubmit}) {
   return (
     <div>
