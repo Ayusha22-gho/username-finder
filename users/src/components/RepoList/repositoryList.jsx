@@ -1,7 +1,9 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import { Link } from "react-router-dom";
+import { Link ,useNavigate} from "react-router-dom";
+
 import "./repositoryList.css";
 export default function index({ followRepo }) {
+  const navigate = useNavigate();
   return (
     <div>
       <div>
@@ -16,17 +18,14 @@ export default function index({ followRepo }) {
             {followRepo.map((user) => (
               <div className="repo-container" key={user.id}>
                 <div>
-                  <img
-                    src={user.owner.avatar_url}
-                    alt=""
-                    width={100}
-                    height={100}
-                  />
+                 
                 </div>
 
                 {/* <Link to = "/details"> <div className="repository-name">{user.name}</div>
                 </Link> */}
-                <div  className="repo-name">
+                <div  className="repo-name" onClick={()=>{
+                  navigate("/details",{state : {followId : user.id}})
+                }}>
                   {user.name}
                   <p className="repo-lang">Language Used: {user.language}</p>
                 </div>

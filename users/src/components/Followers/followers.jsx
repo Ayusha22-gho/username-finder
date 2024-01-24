@@ -16,6 +16,9 @@ const [repo,setRepo] = useState("");
   
   console.log("followdata",followData.length)
   return (
+    <>
+     <p>Go to Home Page</p>
+    <Link to = "/">Home</Link>
     <div className="follow-container">
       {followData.length > 0 ? (
         <div className="follow-grid">
@@ -43,5 +46,6 @@ const [repo,setRepo] = useState("");
         </div>
       )}
     </div>
+    </>
   );
 }

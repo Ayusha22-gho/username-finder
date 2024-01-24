@@ -59,8 +59,10 @@ function App() {
   const getRepData = async(name)=>{
     console.log("from app.js",name)
     const response = await axios.get(`https://api.github.com/users/${name}/repos`)
-    console.log(response.data)
     setFollowRepo(response.data);
+
+    //fetching repo details
+
 
   }
   
@@ -82,7 +84,7 @@ function App() {
             </>
           }
         ></Route>
-        <Route exact path="/details" element={<RepoDetails repoData = {repoData}/>}></Route>
+        <Route exact path="/details" element={<RepoDetails repoData = {repoData} followRepo = {followRepo}/>}></Route>
         <Route exact path="/" element={<Users search={search} repoData ={repoData} />}></Route>
         {followRepo && (<Route exact path = "/repository" element = {<RepositoryList followRepo = {followRepo}/>}></Route>)} 
         <Route exact path = "/follows" element = {<Followers followData = {followData} getRepData ={getRepData}/>}></Route>
