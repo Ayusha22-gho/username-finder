@@ -22,8 +22,8 @@ export default function index({ followData }) {
               <div
                 className="follow-info"
                 onClick={() => {
-                  navigate("/repository",{state : {id : follow.id,repoUrl : follow.repos_url }})
-                  
+                  navigate("/repository",{state : {id : follow.id }})
+
                 }}
               >
                 <p>{follow.login}</p>

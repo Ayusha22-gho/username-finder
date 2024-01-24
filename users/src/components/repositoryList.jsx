@@ -7,9 +7,17 @@ export default function index({repoData}) {
   const [repo, setRepo] = useState([]);
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const location = useLocation()
- const repoUrl = location.state.repoUrl;
+ const repoId = location.state.id;
+//  const fetchApi = async ()=>{
+//       const response = await axios.get(repoUrl)
+//       console.log(response.data)
+//       setRepo(response.data);
+//   }
 
-  
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  // useEffect( ()=>{
+  //   fetchApi();
+  // },[])
 
   // eslint-disable-next-line react-hooks/rules-of-hooks
   // useEffect(  ()=> {
@@ -20,7 +28,6 @@ export default function index({repoData}) {
   //   }
   //   fetchApi();
   // },[])
- console.log(location.state.repoUrl)
   return (
     <div>
     </div>
