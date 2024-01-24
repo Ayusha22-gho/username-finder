@@ -58,7 +58,7 @@ function App() {
 
   
   return (
-    <BrowserRouter>
+   
       <Routes>
         <Route
           exact
@@ -76,9 +76,10 @@ function App() {
           }
         ></Route>
         <Route exact path="/details" element={<RepoDetails repoData = {repoData} />}></Route>
+        <Route exact path="/repository" element={<Users search={search} repoData ={repoData} />}></Route>
         <Route exact path = "/follows" element = {<Followers followData = {followData}/>}></Route>
       </Routes>
-    </BrowserRouter>
+  
   );
 }
 

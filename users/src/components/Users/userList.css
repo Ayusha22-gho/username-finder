@@ -32,3 +32,16 @@ img {
 .login-name{
     font-size: 13px;
 }
+.user-name:hover{
+    color: blue;
+}
+.pin-tabs span {
+    width: 50px;
+   margin: 5px;
+   border-radius: 10px;
+   padding: 2px;
+    background-color: #3498db;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}

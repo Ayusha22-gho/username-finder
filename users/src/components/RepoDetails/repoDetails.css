@@ -1,0 +1,24 @@
+.detail-container{
+    display: flex;
+    justify-content: flex-start;
+    gap: 30px;
+    align-items: flex-start;
+    margin: 10%;
+}
+.detail-user-info{
+    width: 30%;
+}
+.link-text{
+    color: blue;
+}
+.repo-name{
+    font-size: 40px;
+    font-weight: 500;
+    margin: 0;
+    margin-bottom: 10px;
+}
+.plan-button {
+    width: 145px;
+    height: 40px;
+    color: white;
+}
