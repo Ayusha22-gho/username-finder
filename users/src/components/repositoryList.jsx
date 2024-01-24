@@ -7,7 +7,7 @@ export default function index({repoData}) {
   const [repo, setRepo] = useState([]);
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const location = useLocation()
- const repoId = location.state.id;
+//  const repoId = location.state.id;
 //  const fetchApi = async ()=>{
 //       const response = await axios.get(repoUrl)
 //       console.log(response.data)

@@ -22,7 +22,7 @@ export default function index({ followData }) {
               <div
                 className="follow-info"
                 onClick={() => {
-                  navigate("/repository",{state : {id : follow.id }})
+                  navigate("/repository")
 
                 }}
               >
