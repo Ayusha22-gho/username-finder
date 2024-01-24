@@ -21,4 +21,7 @@
     width: 145px;
     height: 40px;
     color: white;
+    background-color: rgb(31, 136, 61);
+    border-radius: 10px
+    ;
 }

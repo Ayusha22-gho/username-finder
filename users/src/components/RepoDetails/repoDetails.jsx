@@ -1,5 +1,5 @@
 import React from 'react'
-import { useLocation } from 'react-router-dom'
+import { useLocation,Link } from 'react-router-dom'
 import "./repoDetails.css"
 export default function index({repoData}) {
   // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -8,7 +8,10 @@ export default function index({repoData}) {
   const details = repoData.filter((user)=> user.id === repoId);
   console.log("details",details)
   return (
+  
     <div className='detail-container'>
+      {details.length > 0 ? ( 
+        <>
       <div className="detail-user-info">
         <img src={details[0].owner.avatar_url} alt="" width={100} height={100}/>
         <div className="info">
@@ -32,7 +35,11 @@ export default function index({repoData}) {
         <div className='info-text'>
           <p>{details[0].description}</p>
         </div>
-      </div>
+      </div></>) : (<div>
+        <p>Enter User Name</p>
+        <Link to = "/">Home</Link>
+      </div>)}
+     
     </div>
   )
 }
